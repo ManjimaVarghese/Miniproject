@@ -1,0 +1,52 @@
+
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+
+<div class="row" style="overflow: scroll">
+      <table class="table table-bordered">
+
+{##}
+{#  	volatile acidity	citric acid	residual sugar	chlorides	free sulfur dioxide	total sulfur dioxide	density	pH	sulphates	alcohol	quality#}
+
+    <tr>
+      <th>Sno</th>
+      <th>Fixed acidity</th>
+      <th>Volatile acidity</th>
+      <th>Citric acid</th>
+      <th>Residual sugar</th>
+      <th>Chlorides</th>
+      <th>Free sulfur dioxide</th>
+      <th>Total sulfur dioxide</th>
+      <th>Density</th>
+      <th>Ph</th>
+      <th>Sulphates</th>
+      <th>Alchohol</th>
+      <th>Quality</th>
+    </tr>
+      {% for i in x %}
+    <tr>
+        <td>&nbsp;{{ loop.index }}</td>
+        <td>&nbsp;{{ i.0 }}</td>
+        <td>&nbsp;{{ i.1 }}</td>
+        <td>&nbsp;{{ i.2 }}</td>
+        <td>&nbsp;{{ i.3 }}</td>
+        <td>&nbsp;{{ i.4 }}</td>
+        <td>&nbsp;{{ i.5 }}</td>
+        <td>&nbsp;{{ i.6 }}</td>
+        <td>&nbsp;{{ i.7 }}</td>
+        <td>&nbsp;{{ i.8 }}</td>
+        <td>&nbsp;{{ i.9 }}</td>
+        <td>&nbsp;{{ i.10 }}</td>
+        <td>&nbsp;{{ i.11 }}</td>
+
+
+    </tr>
+      {% endfor %}
+  </table>
+</div>
+
+</form>
+
+ {% endblock %}

@@ -1,0 +1,144 @@
+
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+
+
+<h2>Performance Analysis of algorithms</h2>
+
+    <table class="table table-bordered">
+    <tr>
+        <td width="150px">SVC Score</td>
+        <td>{{ svcscore }}</td>
+    </tr>
+            <tr>
+        <td>SVC RBF Score</td>
+        <td>{{ svcrpf }}</td>
+
+    </tr>
+
+            <tr>
+        <td>Gaussian</td>
+        <td>{{ gauss }}</td>
+
+    </tr>
+          <tr>
+        <td>Random Forest</td>
+        <td>{{ rf }}</td>
+    </tr>
+
+      </table>
+
+
+<h3 style="color: blue;">Support Vector Machine</h3>
+<br>
+<h5>Accuracy Score : {{ svcscore }}</h5>
+
+<h5>Confusion Matrix</h5>
+<br>
+
+<table class="table table-bordered" style="width: 300px;">
+{% for i in c1 %}
+    <tr>
+        {% for j in i %}
+            <td>{{ j }}</td>
+        {% endfor %}
+    </tr>
+{% endfor %}
+
+
+
+
+</table>
+
+
+
+<br>
+<br>
+
+
+<h3 style="color: blue;">Support Vector RPF</h3>
+<br>
+<h5>Accuracy Score : {{ svcrpf }}</h5>
+
+<h5>Confusion Matrix</h5>
+<br>
+
+<table class="table table-bordered" style="width: 300px;">
+{% for i in c2 %}
+    <tr>
+        {% for j in i %}
+            <td>{{ j }}</td>
+        {% endfor %}
+    </tr>
+{% endfor %}
+
+
+
+
+</table>
+
+
+
+
+<br>
+<br>
+
+
+<h3 style="color: blue;">Gaussian</h3>
+<br>
+<h5>Accuracy Score : {{ gauss }}</h5>
+
+<h5>Confusion Matrix</h5>
+<br>
+
+<table class="table table-bordered" style="width: 300px;">
+{% for i in c3 %}
+    <tr>
+        {% for j in i %}
+            <td>{{ j }}</td>
+        {% endfor %}
+    </tr>
+{% endfor %}
+
+
+
+
+</table>
+
+
+
+
+<br>
+<br>
+
+
+<h3 style="color: blue;">RandomForest</h3>
+<br>
+<h5>Accuracy Score : {{ rf }}</h5>
+
+<h5>Confusion Matrix</h5>
+<br>
+
+<table class="table table-bordered" style="width: 300px;">
+{% for i in c3 %}
+    <tr>
+        {% for j in i %}
+            <td>{{ j }}</td>
+        {% endfor %}
+    </tr>
+{% endfor %}
+
+
+
+
+</table>
+
+
+
+
+
+</form>
+
+ {% endblock %}

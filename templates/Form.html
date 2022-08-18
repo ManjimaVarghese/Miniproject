@@ -1,0 +1,90 @@
+
+{% extends 'admin/adminindex.html' %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="/predictionloadpost">
+  <table  class="table table-bordered">
+    <tr>
+      <td width="250px">Fixed acidity</td>
+      <td><input type="number" name="0" id="textfield" required class="form-control" min="0" max="20" required/></td>
+    </tr>
+
+      <tr>
+      <td>Volatile acidity</td>
+      <td><input type="number" name="1" id="textfield" required class="form-control" min="0" max="20" required /></td>
+    </tr>
+
+    <tr>
+      <td>Citric acid</td>
+      <td><input type="number" name="2" id="textfield" required class="form-control" min="0" max="20" required/></td>
+    </tr>
+
+    <tr>
+      <td>Residual sugar</td>
+      <td><input type="number" name="3" id="textfield" required class="form-control" min="0" max="20" required/></td>
+    </tr>
+        <tr>
+      <td>Chlorides</td>
+      <td><input type="number" name="4" id="textfield" required class="form-control" min="0" max="20" required/></td>
+    </tr>
+        <tr>
+      <td>Free sulfur dioxide</td>
+      <td><input type="number" name="5" id="textfield" required class="form-control" min="0" max="20" required/></td>
+    </tr>
+        <tr>
+      <td>Total sulfur dioxide</td>
+      <td><input type="number" name="6" id="textfield" required class="form-control" min="0" max="20" required/></td>
+    </tr>
+
+
+        <tr>
+      <td>Density</td>
+      <td><input type="number" name="7" id="textfield" required class="form-control" min="0" max="20" required /></td>
+    </tr>
+        <tr>
+      <td>PH value</td>
+      <td><input type="number" name="8" id="textfield" required class="form-control" min="0" max="20" required/></td>
+    </tr>
+
+
+       <tr>
+      <td>Sulphates</td>
+      <td><input type="number" name="9" id="textfield" required class="form-control" min="0" max="20" required/></td>
+    </tr>
+
+        <tr>
+      <td>Alcohol</td>
+      <td><input type="number" name="10" id="textfield" required class="form-control" min="0" max="20" required/></td>
+    </tr>
+
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="button" id="button" value="Submit" class="btn btn-success"/></td>
+    </tr>
+  </table>
+
+
+
+
+    <table class="table table-bordered">
+        <tr>
+            <th width="250px">Prediction of Red wine quality</th>
+             <th>{{ pred4 }}</th>
+
+        </tr>
+         <tr>
+            <th> Result based on predicition :</th>
+             {%  if pred4 >= 6 %}
+             <th>Good quality wine</th>
+             {% elif pred4>=0 %}
+             <th> Bad quality wine</th>
+             {% endif %}
+        </tr>
+     </table>
+
+
+
+
+</form>
+
+ {% endblock %}
